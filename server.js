@@ -41,7 +41,7 @@ async function startServer() {
             console.log(`Server running on http://0.0.0.0:${PORT}`);
 
             // Start keep-alive after server starts
-            startKeepAlive();
+            //startKeepAlive();
         });
 
     } catch (error) {
