@@ -57,7 +57,7 @@ const sendOtpEmail = async (email, otp) => {
         subject: "Your Uvix Verification Code",
         html: `
         <div style="font-family:Arial,sans-serif;padding:30px;max-width:600px;margin:auto;border:1px solid #e5e7eb;border-radius:12px">
-            <h2 style="color:#2563eb;">Welcome to U</h2>
+            <h2 style="color:#2563eb;">Welcome to Uvix</h2>
 
             <p>Your verification code is:</p>
 
