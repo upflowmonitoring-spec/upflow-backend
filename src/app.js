@@ -39,7 +39,7 @@ app.use('/api/v1/auth/register',authLimiter);
 app.get("/", (req, res) => {
     res.json({
         success: true,
-        message: "Welcome to UpFlow API",
+        message: "Welcome to Uvix API",
     });
 });
 
