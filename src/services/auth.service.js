@@ -73,19 +73,27 @@ const loginUser = async (email, password) => {
     };
 };
 
-const updateUser = async(userId , updateData) =>{
+const updateUser = async (userId, updateData) => {
     const { password, ...safeUpdateData } = updateData;
-    const user = await prisma.user.update({
-        where: {
-            id: userId
-        },
-        data: safeUpdateData
-    });
-    return {
-    id: user.id,
-    name: user.name,
-    email: user.email
-    };
+
+    try {
+        const user = await prisma.user.update({
+            where: { id: userId },
+            data: safeUpdateData
+        });
+
+        return {
+            id: user.id,
+            name: user.name,
+            email: user.email
+        };
+    } catch (error) {
+        if (error.code === "P2002") {
+            throw new AppError("Email already exists.", 409);
+        }
+
+        throw error;
+    }
 };
 
 const changePassword = async (userId, currentPassword, newPassword) => {

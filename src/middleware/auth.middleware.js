@@ -27,6 +27,7 @@ const authMiddleware = async(req,res,next) => {
         });
 
         if(!user) throw new Error('User Not Found');
+       // console.log("Authenticated User:", user);
 
         req.user = user;
         next();
