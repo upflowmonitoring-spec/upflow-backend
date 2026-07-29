@@ -13,7 +13,7 @@ if (!EMAIL_FROM) {
 }
 
 const getSender = () => ({
-    name: "UpFlow",
+    name: "Uvix",
     email: EMAIL_FROM.includes("<")
         ? EMAIL_FROM.match(/<(.*)>/)?.[1]
         : EMAIL_FROM
@@ -54,10 +54,10 @@ const sendEmail = async ({ to, subject, html }) => {
 const sendOtpEmail = async (email, otp) => {
     await sendEmail({
         to: email,
-        subject: "Your UpFlow Verification Code",
+        subject: "Your Uvix Verification Code",
         html: `
         <div style="font-family:Arial,sans-serif;padding:30px;max-width:600px;margin:auto;border:1px solid #e5e7eb;border-radius:12px">
-            <h2 style="color:#2563eb;">Welcome to UpFlow</h2>
+            <h2 style="color:#2563eb;">Welcome to U</h2>
 
             <p>Your verification code is:</p>
 
@@ -131,7 +131,7 @@ const sendIncidentResolvedEmail = async (email, monitorName) => {
             </p>
 
             <p>
-                UpFlow has detected successful responses and automatically resolved the incident.
+                Uvix has detected successful responses and automatically resolved the incident.
             </p>
 
         </div>
