@@ -10,7 +10,7 @@ const redis= require("./src/config/redis.js");
 const PORT = process.env.PORT || 8000;
 
 const BACKEND_URL = process.env.BACKEND_URL;
-const PING_INTERVAL = 30 * 1000; // 30 seconds
+// const PING_INTERVAL = 30 * 1000; // 30 seconds
 
 // to keep render prevented from sleep
 // function startKeepAlive() {
@@ -40,8 +40,8 @@ async function startServer() {
         app.listen(PORT, () => {
             console.log(`Server running on http://0.0.0.0:${PORT}`);
 
-            // Start keep-alive after server starts
-            //startKeepAlive();
+           // Start keep-alive after server starts
+           // startKeepAlive();
         });
 
     } catch (error) {
